@@ -22,7 +22,7 @@ class tc001009():
             if idlist['id'] == ad_id:
                 CHECK_POINT('存在添加的老师', True)
             else:
-                CHECK_POINT('不存在添加的老师', False)
+                CHECK_POINT('不存在添加的11老师', False)
 
 # class tc001003():
 #
