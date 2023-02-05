@@ -1,0 +1,73 @@
+
+
+  ========= 测试开始 : 20230126_133645 =========
+
+
+
+>>> cases\API\空白环境\
+
+[ suite setup ] cases\API\空白环境\
+suite_setup
+
+-- 第 1 步 -- 清空所有学生/老师/班级 
+
+
+
+>>> cases\API\空白环境\存在班级\
+
+[ suite setup ] cases\API\空白环境\存在班级\
+
+-- 第 1 步 -- 添加班级 
+
+old初始班级id:20343
+
+
+>>> cases\API\空白环境\存在班级\存在老师\
+
+[ suite setup ] cases\API\空白环境\存在班级\存在老师\
+
+-- 第 1 步 -- 添加老师 
+
+请求结果b'{"retcode": 0, "id": 5297}'
+返回结果{'retcode': 0, 'id': 5297}
+
+
+>>> cases\API\空白环境\存在班级\存在老师\exte_teacher.py
+
+* 添加老师2  -  2023-01-26 13:36:45
+
+  [ case execution steps ]
+
+-- 第 1 步 -- 添加老师 
+
+  ABORT   'id' 
+Traceback:
+  File "cases\API\空白环境\存在班级\存在老师\exte_teacher.py", line 18, in teststeps
+    ad_id = ad_res.json()['id']
+KeyError: 'id'
+
+
+
+  ========= 测试结束 : 20230126_133645 =========
+
+
+  耗时    : 0.476 秒
+
+
+  预备执行用例数量 : 1
+
+  实际执行用例数量 : 1
+
+  通过 : 0
+
+  失败 : 0
+
+  异常 : 1
+
+  套件初始化失败 : 0
+
+  套件清除  失败 : 0
+
+  用例初始化失败 : 0
+
+  用例清除  失败 : 0

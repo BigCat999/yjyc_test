@@ -1,0 +1,71 @@
+
+
+  ========= 测试开始 : 20230126_123222 =========
+
+
+
+>>> cases\API\空白环境\
+
+[ suite setup ] cases\API\空白环境\
+suite_setup
+
+-- 第 1 步 -- 清空所有学生/老师/班级 
+
+
+
+>>> cases\API\空白环境\存在班级\
+
+[ suite setup ] cases\API\空白环境\存在班级\
+
+-- 第 1 步 -- 添加班级 
+
+old初始班级id:20342
+
+
+>>> cases\API\空白环境\存在班级\存在老师\
+
+[ suite setup ] cases\API\空白环境\存在班级\存在老师\
+
+-- 第 1 步 -- 添加老师 
+
+请求结果b'{"retcode": 0, "id": 5287}'
+返回结果{'retcode': 0, 'id': 5287}
+
+
+>>> cases\API\空白环境\存在班级\存在老师\exte_teacher.py
+
+* 添加老师2  -  2023-01-26 12:32:23
+
+  [ case execution steps ]
+
+-- 第 1 步 -- 添加老师 
+
+返回结果{'retlist': [{'username': '初始老师', 'teachclasslist': [20342], 'realname': '测试老师', 'id': 5287, 'phonenumber': '13257657992', 'email': 'ceshi@163.com', 'idcardnumber': '11111111'}], 'retcode': 0}
+返回结果{'reason': '手机号`13257657992`已经绑定其他老师用户', 'retcode': 1}
+返回结果{'retlist': [{'username': '初始老师', 'teachclasslist': [20342], 'realname': '测试老师', 'id': 5287, 'phonenumber': '13257657992', 'email': 'ceshi@163.com', 'idcardnumber': '11111111'}], 'retcode': 0}
+  PASS 
+
+
+  ========= 测试结束 : 20230126_123223 =========
+
+
+  耗时    : 0.510 秒
+
+
+  预备执行用例数量 : 1
+
+  实际执行用例数量 : 1
+
+  通过 : 1
+
+  失败 : 0
+
+  异常 : 0
+
+  套件初始化失败 : 0
+
+  套件清除  失败 : 0
+
+  用例初始化失败 : 0
+
+  用例清除  失败 : 0
