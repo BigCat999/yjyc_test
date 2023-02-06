@@ -235,7 +235,7 @@ class Api_students:
         self.printResponse(response)
         return response
 
-res = Api_teacher().add_teacher(subjectid = 1)
+
 # print(res.request.body)
 # print(res1.request.body)
 # list = [0,1,2,3,4,5,6,7,8,9]
