@@ -34,12 +34,11 @@ class Api_class:
         return response
 
         '''添加班级'''
-    def add_class(self, name = '班级'+ str(int(time.time()))):
+    def add_class(self, name = '班级'+ str(random.randint(0000000, 99999999))):
 
         # headers = {
         #     'Content-Type': 'application/x-www-form-urlencoded'
         # }
-
         data = {
             "vcode": f"{self.vcode}",
             "action": "add",
@@ -107,8 +106,8 @@ class Api_teacher:
         return response
 
         '''添加老师'''
-    def add_teacher(self, username = '登录'+ str(int(time.time())), classlist = '[{"id":20345}]', subjectid = 1, phonenumber = '132'+''.join(random.sample(['0','1','2','3','4','5','6','7','8','9'], 8))):
-
+    def add_teacher(self, username = '登录'+ str(int(time.time())), classlist = '[{"id":20345}]', subjectid = 1):
+        phonenumber = '132' + str(random.randint(00000000, 99999999))
         data = {
             "vcode": f"{self.vcode}",
             "action": "add",
@@ -158,7 +157,6 @@ class Api_teacher:
         self.printResponse(response)
         return response
 
-
 '''学生操作'''
 class Api_students:
 
@@ -190,8 +188,9 @@ class Api_students:
         return response
 
         '''添加学生'''
-    def add_students(self, username = '测试'+str(int(time.time())) , classid = 20247, gradeid = 1, phonenumber = '132'+''.join(random.sample(['0','1','2','3','4','5','6','7','8','9'], 8))):
-
+    def add_students(self, classid = 20247, gradeid = 1):
+        username = '测试' + str(random.randint(000000,9999999))
+        phonenumber = '132' + ''.join(random.sample(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], 8))
         data = {
             "vcode": f"{self.vcode}",
             "action": "add",
@@ -235,7 +234,6 @@ class Api_students:
         self.printResponse(response)
         return response
 
-Api_class().ls_class()
 # print(res.request.body)
 # print(res1.request.body)
 # list = [0,1,2,3,4,5,6,7,8,9]

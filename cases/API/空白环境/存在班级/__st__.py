@@ -1,5 +1,6 @@
 from lib import web_API
 from hytest import *
+import time
 
 def suite_setup():
     STEP(1, '添加班级')
@@ -8,3 +9,4 @@ def suite_setup():
     cscl_id = res.json()['id']
     INFO(f'old初始班级id:{cscl_id}')
     GSTORE['cscl_id'] = cscl_id
+    time.sleep(3)

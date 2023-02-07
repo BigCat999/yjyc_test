@@ -11,14 +11,17 @@ class tc002001():
         classid = GSTORE['cscl_id']
         STEP(1, '添加学生')
         ad_res = web_API.Api_students().add_students(classid = classid)
+        INFO(f'返回结果{ad_res.json()}')
         ad_id = ad_res.json()['id']
         te_res = web_API.Api_students().ls_students()
         INFO(f'返回结果{te_res.json()}')
         for idlist in te_res.json()['retlist']:
             if idlist['id'] == ad_id:
-                CHECK_POINT('添加成功', True)
+                check = True
+                break
             else:
-                CHECK_POINT('添加失败', False)
+                check = False
+        CHECK_POINT('是否添加成功', check)
 
 class tc002081():
 
@@ -38,6 +41,8 @@ class tc002081():
         INFO(f'返回结果{te_res.json()}')
         for idlist in te_res.json()['retlist']:
             if idlist['id'] == self.de_id:
-                CHECK_POINT('删除失败', True)
+                check = False
+                break
             else:
-                CHECK_POINT('删除成功', False)
+                check = True
+        CHECK_POINT('是否删除成功', check)

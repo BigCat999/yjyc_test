@@ -8,7 +8,7 @@ class tc000001():
 
     def teststeps(self):
         STEP(1, '添加班级')
-        ac_res = web_API.Api_class().add_class()
+        ac_res = web_API.Api_class().add_class(name = '测试001')
         new_id = ac_res.json()['id']
         retcode = ac_res.json()['retcode']
         INFO(f'接口返回{retcode}')

@@ -1,6 +1,7 @@
 from lib import web_API
 from hytest import *
 from time import time, sleep
+import json
 
 class tc000002():
 
@@ -8,7 +9,8 @@ class tc000002():
 
     def teststeps(self):
         STEP(1, '添加班级')
-        ac_res = web_API.Api_class().add_class()
+        ac_res = web_API.Api_class().add_class(name = '测试002')
+        INFO(f'接口返回{ac_res.json()}')
         new_id = ac_res.json()['id']
         retcode = ac_res.json()['retcode']
         INFO(f'接口返回{retcode}')
@@ -25,11 +27,10 @@ class tc000003():
     name = '添加班级3'
 
     def teststeps(self):
-        STEP(1, '添加班级')
-        ac_res1 = web_API.Api_class().add_class(999)
-        STEP(2, '添加相同名称的班级')
-        ac_res2 = web_API.Api_class().add_class(999)
-        reason = ac_res2.json()['reason']
+        STEP(1, '添加相同名称的班级')
+        ac_res = web_API.Api_class().add_class(name = '初始班级')
+        INFO(f'接口返回{ac_res.json()}')
+        reason = ac_res.json()['reason']
         INFO(f'接口返回{reason}')
         CHECK_POINT('检查返回结果', reason == 'duplicated class name')
 
@@ -39,18 +40,14 @@ class tc000051():
 
     def teststeps(self):
         STEP(1, '修改班级名字')
-        res_cl = web_API.Api_class().ls_class()
-        name = res_cl.json()['retlist'][0]['name']
-        id = res_cl.json()['retlist'][0]['id']
         new_name = '修改名称' + str(time())
-        res_moy = web_API.Api_class().moy_class(calssid = f'{id}', name = new_name)
+        cl_id = GSTORE['cscl_id']
+        res_moy = web_API.Api_class().moy_class(calssid = cl_id, name = new_name)
         STEP(2,'查询班级名称')
         res_cl2 = web_API.Api_class().ls_class()
         for i in res_cl2.json()['retlist']:
-            if i['id'] == id:
+            if i['id'] == cl_id:
                 cl_name = str(i['name'])
-        INFO(f'修改前名称:{name}')
-        INFO(f'修改后名称:{new_name}')
         CHECK_POINT('检查返回结果', cl_name == new_name)
 
 class tc000052():
@@ -59,12 +56,13 @@ class tc000052():
 
     def teststeps(self):
         STEP(1, '创建班级')
-        res = web_API.Api_class().add_class()
+        res = web_API.Api_class().add_class(name = tc000052)
         cscl_id = res.json()['id']
         INFO(f'初始班级id:{cscl_id}')
         res_ls = web_API.Api_class().ls_class()
+        new_name = res_ls.json()['retlist']['name']
         INFO(f'班级列表:{res_ls.json()}')
-        res_moy = web_API.Api_class().moy_class(calssid = f'{cscl_id}', name = '初始班级')
+        res_moy = web_API.Api_class().moy_class(calssid = f'{cscl_id}', name = new_name)
         INFO(f'修改返回结果:{res_moy.json()}')
         reason = res_moy.json()['reason']
         CHECK_POINT('检查返回结果', reason == 'duplicated class name')
