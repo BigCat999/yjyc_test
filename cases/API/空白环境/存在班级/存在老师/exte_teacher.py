@@ -106,11 +106,16 @@ class tc001082():
         GSTORE['cscl_tc001051'] = cscl_tc001082
 
     def teststeps(self):
-        STEP(1, '删除老师')
+        STEP(2, '删除老师')
         teacherid = GSTORE['cscl_tc001051']
         te_res = web_API.Api_teacher().del_teacher(teacherid = teacherid)
         INFO(f'返回结果{te_res.json()}')
         CHECK_POINT('删除老师是否成功', 0 == te_res.json()['retcode'])
         te_res = web_API.Api_teacher().ls_tescher()
+        for idlist in te_res.json()['retlist']:
+            if idlist['id'] == teacherid:
+                CHECK_POINT('删除成功', True)
+            else:
+                CHECK_POINT('删除失败', False)
 
 

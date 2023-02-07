@@ -190,16 +190,16 @@ class Api_students:
         return response
 
         '''添加学生'''
-    def add_students(self, classid = 20247, gradeid = 1):
+    def add_students(self, username = '测试'+str(int(time.time())) , classid = 20247, gradeid = 1, phonenumber = '132'+''.join(random.sample(['0','1','2','3','4','5','6','7','8','9'], 8))):
 
         data = {
             "vcode": f"{self.vcode}",
             "action": "add",
-            "username": "11ceshi",
+            "username": username,
             "realname": "测试学生",
             "gradeid": gradeid,
             "classid": classid,
-            "phonenumber": "13212123434"
+            "phonenumber": phonenumber
 
         }
 
@@ -235,7 +235,7 @@ class Api_students:
         self.printResponse(response)
         return response
 
-
+Api_class().ls_class()
 # print(res.request.body)
 # print(res1.request.body)
 # list = [0,1,2,3,4,5,6,7,8,9]
