@@ -14,7 +14,7 @@ class tc001009():
         classlist.append(dict)
         STEP(1, '添加老师')
         classlist = json.dumps(classlist)
-        ad_res = web_API.Api_teacher().add_teacher(classlist = classlist, subjectid = 11)
+        ad_res = web_API.Api_teacher().add_teacher(classlist = classlist, username = 'tc001009', subjectid = 11)
         INFO(f'接口返回{ad_res.json()}')
         ad_id = ad_res.json()['id']
         te_res = web_API.Api_teacher().ls_tescher()
@@ -84,7 +84,7 @@ class tc001002():
         classlist.append(dict_class2)
         STEP(1, '修改老师')
         classlist = json.dumps(classlist)
-        te_res = web_API.Api_teacher().moy_teacher(teacherid = cste_id, classlist = classlist)
+        te_res = web_API.Api_teacher().moy_teacher(teacherid = cste_id, classlist = classlist, subjectid = 12)
         INFO(f'返回结果{te_res.json()}')
         CHECK_POINT('检查返回结果', te_res.json()['retcode'] == 0)
 
@@ -110,7 +110,7 @@ class tc001082():
         classlist.append(dict)
         STEP(1, '添加老师')
         classlist = json.dumps(classlist)
-        ad_res = web_API.Api_teacher().add_teacher(classlist = classlist, subjectid = 5)
+        ad_res = web_API.Api_teacher().add_teacher(classlist = classlist, username = 'tc001082', subjectid = 5)
         INFO(f'返回结果{ad_res.json()}')
         self.dete_id = ad_res.json()['id']
 

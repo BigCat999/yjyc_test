@@ -9,4 +9,3 @@ def suite_setup():
     cscl_id = res.json()['id']
     INFO(f'old初始班级id:{cscl_id}')
     GSTORE['cscl_id'] = cscl_id
-    time.sleep(3)

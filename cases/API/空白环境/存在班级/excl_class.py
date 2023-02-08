@@ -57,12 +57,17 @@ class tc000052():
     def teststeps(self):
         STEP(1, '创建班级')
         res = web_API.Api_class().add_class(name = tc000052)
-        cscl_id = res.json()['id']
-        INFO(f'初始班级id:{cscl_id}')
+        adcl_id = res.json()['id']
+        INFO(f'添加班级id:{adcl_id}')
         res_ls = web_API.Api_class().ls_class()
-        new_name = res_ls.json()['retlist']['name']
+        cscl_id = GSTORE['cscl_id']
         INFO(f'班级列表:{res_ls.json()}')
-        res_moy = web_API.Api_class().moy_class(calssid = f'{cscl_id}', name = new_name)
+        INFO(f"班级列表:{res_ls.json()['retlist']}")
+        for id in res_ls.json()['retlist']:
+            if id['id'] == cscl_id:
+                new_name = id['name']
+        INFO(f'班级列表:{new_name}')
+        res_moy = web_API.Api_class().moy_class(calssid = f'{adcl_id}', name = new_name)
         INFO(f'修改返回结果:{res_moy.json()}')
         reason = res_moy.json()['reason']
         CHECK_POINT('检查返回结果', reason == 'duplicated class name')
@@ -104,4 +109,4 @@ class tc000082():
         res_de= web_API.Api_class().del_class(calssid = self.ad_id)
         INFO(f'修改返回结果:{res_de.json()}')
         retcode = res_de.json()['retcode']
-        CHECK_POINT('检查返回结果', retcode == '0')
+        CHECK_POINT('检查返回结果', retcode == 0)

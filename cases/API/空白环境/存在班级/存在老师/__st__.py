@@ -9,7 +9,7 @@ def suite_setup():
     classlist.append(dict)
     STEP(1, '添加老师')
     classlist = json.dumps(classlist)
-    ad_res = web_API.Api_teacher().add_teacher(classlist=classlist, username = '初始老师' )
+    ad_res = web_API.Api_teacher().add_teacher(classlist=classlist, username = '初始老师', subjectid = 12 )
+    INFO(f'请求结果{ad_res.json()}')
+    INFO(f"请求结果{ad_res.json()['id']}")
     GSTORE['cste_id'] = ad_res.json()['id']
-    INFO(f'请求结果{ad_res.content}')
-    INFO(f'返回结果{ad_res.json()}')

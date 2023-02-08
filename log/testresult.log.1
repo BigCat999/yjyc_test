@@ -1,6 +1,6 @@
 
 
-  ========= 测试开始 : 20230207_220922 =========
+  ========= 测试开始 : 20230208_165355 =========
 
 
 
@@ -15,7 +15,7 @@ suite_setup
 
 >>> cases\API\空白环境\blank_test.py
 
-* 添加班级1  -  2023-02-07 22:09:22
+* 添加班级1  -  2023-02-08 16:53:55
 
   [ case execution steps ]
 
@@ -25,7 +25,7 @@ suite_setup
 
 ** 检查点 **  检查返回值 ---->  通过
 
-接口返回20424
+接口返回20504
 
 ** 检查点 **  检查返回值 ---->  通过
 
@@ -38,29 +38,29 @@ suite_setup
 
 -- 第 1 步 -- 添加班级 
 
-old初始班级id:20425
+old初始班级id:20505
 
 
 >>> cases\API\空白环境\存在班级\excl_class.py
 
-* 添加班级2  -  2023-02-07 22:09:25
+* 添加班级2  -  2023-02-08 16:53:55
 
   [ case execution steps ]
 
 -- 第 1 步 -- 添加班级 
 
-接口返回{'invitecode': '204266507092', 'retcode': 0, 'id': 20426}
+接口返回{'invitecode': '205066698771', 'retcode': 0, 'id': 20506}
 接口返回0
 
 ** 检查点 **  检查返回值 ---->  通过
 
-接口返回20426
+接口返回20506
 
 ** 检查点 **  检查返回结果 ---->  通过
 
   PASS 
 
-* 添加班级3  -  2023-02-07 22:09:25
+* 添加班级3  -  2023-02-08 16:53:55
 
   [ case execution steps ]
 
@@ -112,7 +112,7 @@ Traceback:
 AssertionError
 
 
-* 修改班级1  -  2023-02-07 22:09:25
+* 修改班级1  -  2023-02-08 16:53:55
 
   [ case execution steps ]
 
@@ -126,21 +126,30 @@ AssertionError
 
   PASS 
 
-* 修改班级2  -  2023-02-07 22:09:25
+* 修改班级2  -  2023-02-08 16:53:55
 
   [ case execution steps ]
 
 -- 第 1 步 -- 创建班级 
 
-初始班级id:20428
-  ABORT   list indices must be integers or slices, not str 
+添加班级id:20508
+班级列表:{'gradeid': 1, 'retlist': [{'name': '测试001', 'grade__name': '七年级', 'invitecode': '205046150519', 'studentlimit': 100, 'studentnumber': 0, 'id': 20504, 'teacherlist': []}, {'name': '修改名称1675846435.7310529', 'grade__name': '七年级', 'invitecode': '205057167750', 'studentlimit': 100, 'studentnumber': 0, 'id': 20505, 'teacherlist': []}, {'name': '测试002', 'grade__name': '七年级', 'invitecode': '205066698771', 'studentlimit': 100, 'studentnumber': 0, 'id': 20506, 'teacherlist': []}, {'name': "<class 'excl_class.tc000052'>", 'grade__name': '七年级', 'invitecode': '205086325627', 'studentlimit': 100, 'studentnumber': 0, 'id': 20508, 'teacherlist': []}], 'retcode': 0}
+班级列表:[{'name': '测试001', 'grade__name': '七年级', 'invitecode': '205046150519', 'studentlimit': 100, 'studentnumber': 0, 'id': 20504, 'teacherlist': []}, {'name': '修改名称1675846435.7310529', 'grade__name': '七年级', 'invitecode': '205057167750', 'studentlimit': 100, 'studentnumber': 0, 'id': 20505, 'teacherlist': []}, {'name': '测试002', 'grade__name': '七年级', 'invitecode': '205066698771', 'studentlimit': 100, 'studentnumber': 0, 'id': 20506, 'teacherlist': []}, {'name': "<class 'excl_class.tc000052'>", 'grade__name': '七年级', 'invitecode': '205086325627', 'studentlimit': 100, 'studentnumber': 0, 'id': 20508, 'teacherlist': []}]
+班级列表:修改名称1675846435.7310529
+修改返回结果:{'reason': '未知错误:Traceback (most recent call last):\n  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 612, in modifyClass\n    school_class.save()\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save\n    force_update=force_update, update_fields=update_fields)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base\n    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 803, in _save_table\n    forced_update)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 853, in _do_update\n    return filtered._update(values) > 0\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 580, in _update\n    return query.get_compiler(self.db).execute_sql(CURSOR)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1062, in execute_sql\n    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 840, in execute_sql\n    cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute\n    return self.cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__\n    six.reraise(dj_exc_type, dj_exc_value, traceback)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute\n    return self.cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute\n    return self.cursor.execute(query, args)\n  File "/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute\n    self.errorhandler(self, exc, value)\n  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler\n    raise errorclass, errorvalue\nIntegrityError: (1062, "Duplicate entry \'\\xe4\\xbf\\xae\\xe6\\x94\\xb9\\xe5\\x90\\x8d\\xe7\\xa7\\xb01675846435.7310529-407-1\' for key \'name\'")\n', 'retcode': 10000}
+
+** 检查点 **  检查返回结果 ---->  !! 不通过!!
+
+  FAIL    
 Traceback:
-  File "cases\API\空白环境\存在班级\excl_class.py", line 63, in teststeps
-    new_name = res_ls.json()['retlist']['name']
-TypeError: list indices must be integers or slices, not str
+  File "cases\API\空白环境\存在班级\excl_class.py", line 73, in teststeps
+    CHECK_POINT('检查返回结果', reason == 'duplicated class name')
+  File "D:\Python39\lib\site-packages\hytest\common.py", line 58, in CHECK_POINT
+    raise AssertionError()
+AssertionError
 
 
-* 修改班级3  -  2023-02-07 22:09:25
+* 修改班级3  -  2023-02-08 16:53:55
 
   [ case execution steps ]
 
@@ -152,7 +161,7 @@ TypeError: list indices must be integers or slices, not str
 
   PASS 
 
-* 删除班级1  -  2023-02-07 22:09:25
+* 删除班级1  -  2023-02-08 16:53:55
 
   [ case execution steps ]
 
@@ -164,7 +173,7 @@ TypeError: list indices must be integers or slices, not str
 
   PASS 
 
-* 删除班级2  -  2023-02-07 22:09:25
+* 删除班级2  -  2023-02-08 16:53:55
 
 [ case setup ] 删除班级2
 
@@ -177,27 +186,20 @@ TypeError: list indices must be integers or slices, not str
 
 修改返回结果:{'retcode': 0}
 
-** 检查点 **  检查返回结果 ---->  !! 不通过!!
+** 检查点 **  检查返回结果 ---->  通过
 
-  FAIL    
-Traceback:
-  File "cases\API\空白环境\存在班级\excl_class.py", line 107, in teststeps
-    CHECK_POINT('检查返回结果', retcode == '0')
-  File "D:\Python39\lib\site-packages\hytest\common.py", line 58, in CHECK_POINT
-    raise AssertionError()
-AssertionError
-
+  PASS 
 
 
 >>> cases\API\空白环境\存在班级\excl_teacher.py
 
-* 添加老师1  -  2023-02-07 22:09:25
+* 添加老师1  -  2023-02-08 16:53:55
 
   [ case execution steps ]
 
 -- 第 1 步 -- 添加老师 
 
-返回结果{'retcode': 0, 'id': 5384}
+返回结果{'retcode': 0, 'id': 5243}
 
 ** 检查点 **  存在添加的老师 ---->  通过
 
@@ -210,31 +212,188 @@ AssertionError
 
 -- 第 1 步 -- 添加老师 
 
-suite setup fail | 'id' 
-Traceback:
-  File "cases\API\空白环境\存在班级\存在老师\__st__.py", line 13, in suite_setup
-    GSTORE['cste_id'] = ad_res.json()['id']
-KeyError: 'id'
+请求结果{'retcode': 0, 'id': 5244}
+请求结果5244
 
 
+>>> cases\API\空白环境\存在班级\存在老师\exte_student.py
 
-  ========= 测试结束 : 20230207_220925 =========
+* 添加学生1  -  2023-02-08 16:53:56
+
+  [ case execution steps ]
+
+-- 第 1 步 -- 添加学生 
+
+返回结果{'retcode': 0, 'id': 2150}
+
+** 检查点 **  添加成功 ---->  通过
+
+返回结果{'retlist': [{'classid': 20505, 'realname': '测试学生', 'username': '测试5398241', 'phonenumber': '13280364971', 'id': 2150}], 'retcode': 0}
+
+** 检查点 **  是否添加成功 ---->  通过
+
+  PASS 
 
 
-  耗时    : 3.878 秒
+>>> cases\API\空白环境\存在班级\存在老师\exte_teacher.py
+
+* 添加老师2  -  2023-02-08 16:53:56
+
+  [ case execution steps ]
+
+-- 第 1 步 -- 添加老师 
+
+接口返回{'retcode': 0, 'id': 5245}
+返回结果{'retlist': [{'username': '登录1675846435', 'teachclasslist': [20505], 'realname': '测试老师', 'id': 5243, 'phonenumber': '13240236291', 'email': 'ceshi@16553.com', 'idcardnumber': '111111155'}, {'username': '初始老师', 'teachclasslist': [20505], 'realname': '测试老师', 'id': 5244, 'phonenumber': '1326889155', 'email': 'ceshi@16553.com', 'idcardnumber': '111111155'}, {'username': 'tc001009', 'teachclasslist': [20505], 'realname': '测试老师', 'id': 5245, 'phonenumber': '13218072699', 'email': 'ceshi@16553.com', 'idcardnumber': '111111155'}], 'retcode': 0}
+5243
+5244
+5245
+
+** 检查点 **  是否添加成功 ---->  通过
+
+  PASS 
+
+* 添加老师3  -  2023-02-08 16:53:56
+
+  [ case execution steps ]
+
+-- 第 1 步 -- 添加老师 
+
+返回结果{'reason': '登录名 初始老师 已经存在', 'retcode': 1}
+
+** 检查点 **  登录名 初始老师 已经存在 ---->  通过
+
+  PASS 
+
+* 修改老师1  -  2023-02-08 16:53:56
+
+  [ case execution steps ]
+
+-- 第 1 步 -- 修改老师 
+
+返回结果{'reason': 'id 为`999999`的老师不存在', 'retcode': 1}
+
+** 检查点 **   id 为`999999`的老师不存在 ---->  通过
+
+  PASS 
+
+* 修改老师2  -  2023-02-08 16:53:56
+
+[ case setup ] 修改老师2
+
+-- 第 1 步 -- 创建班级class2 
+
+接口返回{'invitecode': '205103596822', 'retcode': 0, 'id': 20510}
+
+  [ case execution steps ]
+
+-- 第 1 步 -- 修改老师 
+
+返回结果{'retcode': 0}
+
+** 检查点 **  检查返回结果 ---->  通过
+
+  PASS 
+
+* 删除老师1  -  2023-02-08 16:53:56
+
+  [ case execution steps ]
+
+-- 第 1 步 -- 删除老师 
+
+返回结果{'reason': 'id 为`9999999`的老师不存在', 'retcode': 404}
+
+** 检查点 **  id 为`9999999`的老师不存在 ---->  通过
+
+  PASS 
+
+* 删除老师2  -  2023-02-08 16:53:56
+
+[ case setup ] 删除老师2
+
+-- 第 1 步 -- 添加老师 
+
+返回结果{'retcode': 0, 'id': 5246}
+
+  [ case execution steps ]
+
+-- 第 2 步 -- 删除老师 
+
+返回结果{'retcode': 0}
+
+** 检查点 **  删除老师是否成功 ---->  通过
+
+
+** 检查点 **  删除成功 ---->  通过
+
+
+** 检查点 **  删除成功 ---->  通过
+
+
+** 检查点 **  删除成功 ---->  通过
+
+  PASS 
+
+
+>>> cases\API\空白环境\存在班级\存在老师\存在学生\
+
+[ suite setup ] cases\API\空白环境\存在班级\存在老师\存在学生\
+
+-- 第 1 步 -- 添加学生 
+
+返回结果{'retcode': 0, 'id': 2151}
+
+
+>>> cases\API\空白环境\存在班级\存在老师\存在学生\exst_student.py
+
+* 添加学生2  -  2023-02-08 16:53:56
+
+  [ case execution steps ]
+
+-- 第 1 步 -- 添加学生 
+
+返回结果{'retcode': 0, 'id': 2152}
+返回结果{'retlist': [{'classid': 20505, 'realname': '测试学生', 'username': '测试5398241', 'phonenumber': '13280364971', 'id': 2150}, {'classid': 20505, 'realname': '测试学生', 'username': '测试901473', 'phonenumber': '13212804695', 'id': 2151}, {'classid': 20505, 'realname': '测试学生', 'username': '测试8320784', 'phonenumber': '13276835249', 'id': 2152}], 'retcode': 0}
+
+** 检查点 **  是否添加成功 ---->  通过
+
+  PASS 
+
+* 删除学生1  -  2023-02-08 16:53:56
+
+[ case setup ] 删除学生1
+
+-- 第 1 步 -- 添加学生 
+
+
+  [ case execution steps ]
+
+-- 第 2 步 -- 删除学生 
+
+返回结果{'retlist': [{'classid': 20505, 'realname': '测试学生', 'username': '测试5398241', 'phonenumber': '13280364971', 'id': 2150}, {'classid': 20505, 'realname': '测试学生', 'username': '测试901473', 'phonenumber': '13212804695', 'id': 2151}, {'classid': 20505, 'realname': '测试学生', 'username': '测试8320784', 'phonenumber': '13276835249', 'id': 2152}], 'retcode': 0}
+
+** 检查点 **  是否删除成功 ---->  通过
+
+  PASS 
+
+
+  ========= 测试结束 : 20230208_165356 =========
+
+
+  耗时    : 1.448 秒
 
 
   预备执行用例数量 : 18
 
-  实际执行用例数量 : 9
+  实际执行用例数量 : 18
 
-  通过 : 6
+  通过 : 16
 
   失败 : 2
 
-  异常 : 1
+  异常 : 0
 
-  套件初始化失败 : 1
+  套件初始化失败 : 0
 
   套件清除  失败 : 0
 
