@@ -42,7 +42,7 @@ class tc001003():
         classlist.append(dict)
         STEP(1, '添加老师')
         classlist = json.dumps(classlist)
-        ad_res = web_API.Api_teacher().add_teacher(classlist = classlist, username = '初始老师')
+        ad_res = web_API.Api_teacher().add_teacher(classlist = classlist, username = '初始老师', subjectid = 12)
         INFO(f'返回结果{ad_res.json()}')
         reason = ad_res.json()['reason']
         CHECK_POINT('登录名 初始老师 已经存在', ad_res.json()['reason'])
