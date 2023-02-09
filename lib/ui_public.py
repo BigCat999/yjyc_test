@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import requests
 from hytest import *
-import  config
+from lib.config import configs
 
 def open_browser():
     options = webdriver.ChromeOptions()
@@ -12,13 +12,10 @@ def open_browser():
     GSTORE['wd'] = wd
 
 def login(username, password, path):
-    url = config.configs.url
+    url = configs.url
     wd = GSTORE['wd']
     wd.get(f'{url}{path}')
     wd.find_element(By.CSS_SELECTOR, '#username').send_keys(username)
     wd.find_element(By.CSS_SELECTOR, '#password').send_keys(password)
-    wd.find_element(By.CSS_SELECTOR, 'button[type = "submit"]').click()
+    wd.find_element(By.CSS_SELECTOR, 'button[id = "submit"]').click()
 
-if __name__ == '__main__':
-    open_browser()
-    login(123,345)

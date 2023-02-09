@@ -1,6 +1,14 @@
+suite_setup
+
+-- 第 1 步 -- 清空所有学生/老师/班级 
 
 
-  ========= 测试开始 : 20230208_151124 =========
+-- 第 1 步 -- 添加班级 
+
+old初始班级id:20535
+
+
+  ========= 测试开始 : 20230209_161121 =========
 
 
 
@@ -13,383 +21,57 @@ suite_setup
 
 
 
->>> cases\API\空白环境\blank_test.py
-
-* 添加班级1  -  2023-02-08 15:11:24
-
-  [ case execution steps ]
-
--- 第 1 步 -- 添加班级 
-
-接口返回0
-
-** 检查点 **  检查返回值 ---->  通过
-
-接口返回20497
-
-** 检查点 **  检查返回值 ---->  通过
-
-  PASS 
-
-
 >>> cases\API\空白环境\存在班级\
 
 [ suite setup ] cases\API\空白环境\存在班级\
 
 -- 第 1 步 -- 添加班级 
 
-old初始班级id:20498
+old初始班级id:20536
 
 
->>> cases\API\空白环境\存在班级\excl_class.py
+>>> cases\API\空白环境\存在班级\ui_teacher.py
 
-* 添加班级2  -  2023-02-08 15:11:25
+[ suite setup ] cases\API\空白环境\存在班级\ui_teacher.py
 
-  [ case execution steps ]
-
--- 第 1 步 -- 添加班级 
-
-接口返回{'invitecode': '204999535463', 'retcode': 0, 'id': 20499}
-接口返回0
-
-** 检查点 **  检查返回值 ---->  通过
-
-接口返回20499
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-* 添加班级3  -  2023-02-08 15:11:25
-
-  [ case execution steps ]
-
--- 第 1 步 -- 添加相同名称的班级 
-
-接口返回{'reason': 'Traceback (most recent call last):\n  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 542, in addClass\n    school_class = self._addClass(name,schoolid,gradeid,studentlimit)\n  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 531, in _addClass\n    school_class.save()\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save\n    force_update=force_update, update_fields=update_fields)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base\n    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 822, in _save_table\n    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 861, in _do_insert\n    using=using, raw=raw)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method\n    return getattr(self.get_queryset(), name)(*args, **kwargs)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert\n    return query.get_compiler(using=using).execute_sql(return_id)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 974, in execute_sql\n    cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute\n    return self.cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__\n    six.reraise(dj_exc_type, dj_exc_value, traceback)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute\n    return self.cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute\n    return self.cursor.execute(query, args)\n  File "/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute\n    self.errorhandler(self, exc, value)\n  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler\n    raise errorclass, errorvalue\nIntegrityError: (1062, "Duplicate entry \'\\xe5\\x88\\x9d\\xe5\\xa7\\x8b\\xe7\\x8f\\xad\\xe7\\xba\\xa7-407-1\' for key \'name\'")\n', 'retcode': 1}
-接口返回Traceback (most recent call last):
-  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 542, in addClass
-    school_class = self._addClass(name,schoolid,gradeid,studentlimit)
-  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 531, in _addClass
-    school_class.save()
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
-    force_update=force_update, update_fields=update_fields)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
-    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 822, in _save_table
-    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 861, in _do_insert
-    using=using, raw=raw)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert
-    return query.get_compiler(using=using).execute_sql(return_id)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 974, in execute_sql
-    cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
-    return self.cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__
-    six.reraise(dj_exc_type, dj_exc_value, traceback)
-  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
-    return self.cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute
-    return self.cursor.execute(query, args)
-  File "/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
-    self.errorhandler(self, exc, value)
-  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
-    raise errorclass, errorvalue
-IntegrityError: (1062, "Duplicate entry '\xe5\x88\x9d\xe5\xa7\x8b\xe7\x8f\xad\xe7\xba\xa7-407-1' for key 'name'")
+-- 第 1 步 -- 获取浏览器对象 
 
 
-** 检查点 **  检查返回结果 ---->  !! 不通过!!
+* 老师登录1  -  2023-02-09 16:11:22
 
-  FAIL    
-Traceback:
-  File "cases\API\空白环境\存在班级\excl_class.py", line 35, in teststeps
-    CHECK_POINT('检查返回结果', reason == 'duplicated class name')
-  File "D:\Python39\lib\site-packages\hytest\common.py", line 58, in CHECK_POINT
-    raise AssertionError()
-AssertionError
+[ case setup ] 老师登录1
 
+-- 第 1 步 -- 创建老师 
 
-* 修改班级1  -  2023-02-08 15:11:25
-
-  [ case execution steps ]
-
--- 第 1 步 -- 修改班级名字 
-
-
--- 第 2 步 -- 查询班级名称 
-
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-* 修改班级2  -  2023-02-08 15:11:25
-
-  [ case execution steps ]
-
--- 第 1 步 -- 创建班级 
-
-添加班级id:20501
-班级列表:{'gradeid': 1, 'retlist': [{'name': '测试001', 'grade__name': '七年级', 'invitecode': '204976613417', 'studentlimit': 100, 'studentnumber': 0, 'id': 20497, 'teacherlist': []}, {'name': '修改名称1675840285.0886858', 'grade__name': '七年级', 'invitecode': '204987781148', 'studentlimit': 100, 'studentnumber': 0, 'id': 20498, 'teacherlist': []}, {'name': '测试002', 'grade__name': '七年级', 'invitecode': '204999535463', 'studentlimit': 100, 'studentnumber': 0, 'id': 20499, 'teacherlist': []}, {'name': "<class 'excl_class.tc000052'>", 'grade__name': '七年级', 'invitecode': '205014847013', 'studentlimit': 100, 'studentnumber': 0, 'id': 20501, 'teacherlist': []}], 'retcode': 0}
-班级列表:[{'name': '测试001', 'grade__name': '七年级', 'invitecode': '204976613417', 'studentlimit': 100, 'studentnumber': 0, 'id': 20497, 'teacherlist': []}, {'name': '修改名称1675840285.0886858', 'grade__name': '七年级', 'invitecode': '204987781148', 'studentlimit': 100, 'studentnumber': 0, 'id': 20498, 'teacherlist': []}, {'name': '测试002', 'grade__name': '七年级', 'invitecode': '204999535463', 'studentlimit': 100, 'studentnumber': 0, 'id': 20499, 'teacherlist': []}, {'name': "<class 'excl_class.tc000052'>", 'grade__name': '七年级', 'invitecode': '205014847013', 'studentlimit': 100, 'studentnumber': 0, 'id': 20501, 'teacherlist': []}]
-班级列表:修改名称1675840285.0886858
-修改返回结果:{'reason': '未知错误:Traceback (most recent call last):\n  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 612, in modifyClass\n    school_class.save()\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save\n    force_update=force_update, update_fields=update_fields)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base\n    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 803, in _save_table\n    forced_update)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 853, in _do_update\n    return filtered._update(values) > 0\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 580, in _update\n    return query.get_compiler(self.db).execute_sql(CURSOR)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1062, in execute_sql\n    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 840, in execute_sql\n    cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute\n    return self.cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__\n    six.reraise(dj_exc_type, dj_exc_value, traceback)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute\n    return self.cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute\n    return self.cursor.execute(query, args)\n  File "/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute\n    self.errorhandler(self, exc, value)\n  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler\n    raise errorclass, errorvalue\nIntegrityError: (1062, "Duplicate entry \'\\xe4\\xbf\\xae\\xe6\\x94\\xb9\\xe5\\x90\\x8d\\xe7\\xa7\\xb01675840285.0886858-407-1\' for key \'name\'")\n', 'retcode': 10000}
-
-** 检查点 **  检查返回结果 ---->  !! 不通过!!
-
-  FAIL    
-Traceback:
-  File "cases\API\空白环境\存在班级\excl_class.py", line 73, in teststeps
-    CHECK_POINT('检查返回结果', reason == 'duplicated class name')
-  File "D:\Python39\lib\site-packages\hytest\common.py", line 58, in CHECK_POINT
-    raise AssertionError()
-AssertionError
-
-
-* 修改班级3  -  2023-02-08 15:11:25
-
-  [ case execution steps ]
-
--- 第 1 步 -- 修改不存在的班级 
-
-修改返回结果:{'reason': 'id 为`99999999`的班级不存在', 'retcode': 404}
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-* 删除班级1  -  2023-02-08 15:11:25
-
-  [ case execution steps ]
-
--- 第 1 步 -- 删除不存在的班级 
-
-修改返回结果:{'reason': 'id 为`9999999`的班级不存在', 'retcode': 404}
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-* 删除班级2  -  2023-02-08 15:11:25
-
-[ case setup ] 删除班级2
-
--- 第 1 步 -- 创建班级 
-
-
-  [ case execution steps ]
-
--- 第 2 步 -- 删除班级 
-
-修改返回结果:{'retcode': 0}
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-
->>> cases\API\空白环境\存在班级\excl_teacher.py
-
-* 添加老师1  -  2023-02-08 15:11:25
-
-  [ case execution steps ]
 
 -- 第 1 步 -- 添加老师 
 
-返回结果{'retcode': 0, 'id': 5239}
-
-** 检查点 **  存在添加的老师 ---->  通过
-
-  PASS 
-
-
->>> cases\API\空白环境\存在班级\存在老师\
-
-[ suite setup ] cases\API\空白环境\存在班级\存在老师\
-
--- 第 1 步 -- 添加老师 
-
-请求结果{'retcode': 0, 'id': 5240}
-请求结果5240
-
-
->>> cases\API\空白环境\存在班级\存在老师\exte_student.py
-
-* 添加学生1  -  2023-02-08 15:11:25
+返回结果{'retcode': 0, 'id': 5257}
 
   [ case execution steps ]
 
--- 第 1 步 -- 添加学生 
+-- 第 2 步 -- 登录账号 
 
-返回结果{'retcode': 0, 'id': 2146}
-
-** 检查点 **  添加成功 ---->  通过
-
-返回结果{'retlist': [{'classid': 20498, 'realname': '测试学生', 'username': '测试2506540', 'phonenumber': '13230728654', 'id': 2146}], 'retcode': 0}
-
-** 检查点 **  是否添加成功 ---->  通过
-
+列表['白月学院00002', '测试老师', '初中数学', '0']
   PASS 
 
+[ suite teardown ] cases\API\空白环境\存在班级\ui_teacher.py
+关闭浏览器
 
->>> cases\API\空白环境\存在班级\存在老师\exte_teacher.py
 
-* 添加老师2  -  2023-02-08 15:11:25
+  ========= 测试结束 : 20230209_161129 =========
 
-  [ case execution steps ]
 
--- 第 1 步 -- 添加老师 
+  耗时    : 7.859 秒
 
-接口返回{'retcode': 0, 'id': 5241}
-返回结果{'retlist': [{'username': '登录1675840284', 'teachclasslist': [20498], 'realname': '测试老师', 'id': 5239, 'phonenumber': '13279057066', 'email': 'ceshi@16553.com', 'idcardnumber': '111111155'}, {'username': '初始老师', 'teachclasslist': [20498], 'realname': '测试老师', 'id': 5240, 'phonenumber': '13235014330', 'email': 'ceshi@16553.com', 'idcardnumber': '111111155'}, {'username': 'tc001009', 'teachclasslist': [20498], 'realname': '测试老师', 'id': 5241, 'phonenumber': '13215627069', 'email': 'ceshi@16553.com', 'idcardnumber': '111111155'}], 'retcode': 0}
-5239
-5240
-5241
 
-** 检查点 **  是否添加成功 ---->  通过
+  预备执行用例数量 : 1
 
-  PASS 
+  实际执行用例数量 : 1
 
-* 添加老师3  -  2023-02-08 15:11:25
+  通过 : 1
 
-  [ case execution steps ]
-
--- 第 1 步 -- 添加老师 
-
-返回结果{'reason': '登录名 初始老师 已经存在', 'retcode': 1}
-
-** 检查点 **  登录名 初始老师 已经存在 ---->  通过
-
-  PASS 
-
-* 修改老师1  -  2023-02-08 15:11:25
-
-  [ case execution steps ]
-
--- 第 1 步 -- 修改老师 
-
-返回结果{'reason': 'id 为`999999`的老师不存在', 'retcode': 1}
-
-** 检查点 **   id 为`999999`的老师不存在 ---->  通过
-
-  PASS 
-
-* 修改老师2  -  2023-02-08 15:11:25
-
-[ case setup ] 修改老师2
-
--- 第 1 步 -- 创建班级class2 
-
-接口返回{'invitecode': '205036748892', 'retcode': 0, 'id': 20503}
-
-  [ case execution steps ]
-
--- 第 1 步 -- 修改老师 
-
-返回结果{'retcode': 0}
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-* 删除老师1  -  2023-02-08 15:11:25
-
-  [ case execution steps ]
-
--- 第 1 步 -- 删除老师 
-
-返回结果{'reason': 'id 为`9999999`的老师不存在', 'retcode': 404}
-
-** 检查点 **  id 为`9999999`的老师不存在 ---->  通过
-
-  PASS 
-
-* 删除老师2  -  2023-02-08 15:11:25
-
-[ case setup ] 删除老师2
-
--- 第 1 步 -- 添加老师 
-
-返回结果{'retcode': 0, 'id': 5242}
-
-  [ case execution steps ]
-
--- 第 2 步 -- 删除老师 
-
-返回结果{'retcode': 0}
-
-** 检查点 **  删除老师是否成功 ---->  通过
-
-
-** 检查点 **  删除成功 ---->  通过
-
-
-** 检查点 **  删除成功 ---->  通过
-
-
-** 检查点 **  删除成功 ---->  通过
-
-  PASS 
-
-
->>> cases\API\空白环境\存在班级\存在老师\存在学生\
-
-[ suite setup ] cases\API\空白环境\存在班级\存在老师\存在学生\
-
--- 第 1 步 -- 添加学生 
-
-返回结果{'retcode': 0, 'id': 2147}
-
-
->>> cases\API\空白环境\存在班级\存在老师\存在学生\exst_student.py
-
-* 添加学生2  -  2023-02-08 15:11:25
-
-  [ case execution steps ]
-
--- 第 1 步 -- 添加学生 
-
-返回结果{'retcode': 0, 'id': 2148}
-返回结果{'retlist': [{'classid': 20498, 'realname': '测试学生', 'username': '测试2506540', 'phonenumber': '13230728654', 'id': 2146}, {'classid': 20498, 'realname': '测试学生', 'username': '测试1774225', 'phonenumber': '13293480527', 'id': 2147}, {'classid': 20498, 'realname': '测试学生', 'username': '测试6315567', 'phonenumber': '13243719628', 'id': 2148}], 'retcode': 0}
-
-** 检查点 **  是否添加成功 ---->  通过
-
-  PASS 
-
-* 删除学生1  -  2023-02-08 15:11:25
-
-[ case setup ] 删除学生1
-
--- 第 1 步 -- 添加学生 
-
-
-  [ case execution steps ]
-
--- 第 2 步 -- 删除学生 
-
-返回结果{'retlist': [{'classid': 20498, 'realname': '测试学生', 'username': '测试2506540', 'phonenumber': '13230728654', 'id': 2146}, {'classid': 20498, 'realname': '测试学生', 'username': '测试1774225', 'phonenumber': '13293480527', 'id': 2147}, {'classid': 20498, 'realname': '测试学生', 'username': '测试6315567', 'phonenumber': '13243719628', 'id': 2148}], 'retcode': 0}
-
-** 检查点 **  是否删除成功 ---->  通过
-
-  PASS 
-
-
-  ========= 测试结束 : 20230208_151126 =========
-
-
-  耗时    : 1.634 秒
-
-
-  预备执行用例数量 : 18
-
-  实际执行用例数量 : 18
-
-  通过 : 16
-
-  失败 : 2
+  失败 : 0
 
   异常 : 0
 

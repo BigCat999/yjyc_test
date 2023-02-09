@@ -9,3 +9,5 @@ def suite_setup():
     cscl_id = res.json()['id']
     INFO(f'old初始班级id:{cscl_id}')
     GSTORE['cscl_id'] = cscl_id
+    print(cscl_id)
+suite_setup()

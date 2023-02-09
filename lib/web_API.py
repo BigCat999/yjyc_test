@@ -106,7 +106,7 @@ class Api_teacher:
         return response
 
         '''添加老师'''
-    def add_teacher(self, username = '登录'+ str(int(time.time())), classlist = '[{"id":20345}]', subjectid = 1):
+    def add_teacher(self, username = '登录'+ str(int(time.time())), classlist = '[{"id":20524}]', subjectid = 1):
         phonenumber = '132' + str(random.randint(00000000, 99999999))
         data = {
             "vcode": f"{self.vcode}",
@@ -156,7 +156,7 @@ class Api_teacher:
                                        data=data)
         self.printResponse(response)
         return response
-
+Api_teacher().add_teacher()
 '''学生操作'''
 class Api_students:
 

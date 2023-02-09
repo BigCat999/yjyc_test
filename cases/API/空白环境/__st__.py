@@ -20,3 +20,4 @@ def suite_setup():
     for idlist in cl_res.json()['retlist']:
         print(idlist['id'])
         response =web_API.Api_class().del_class(idlist['id'])
+suite_setup()
