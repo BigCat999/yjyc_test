@@ -65,7 +65,7 @@ class Api_class:
         return response
 
         '''删除班级'''
-    def del_class(self, calssid=20247):
+    def del_class(self, calssid=20600):
         data = {
             "vcode": f"{self.vcode}"
         }
@@ -156,7 +156,6 @@ class Api_teacher:
                                        data=data)
         self.printResponse(response)
         return response
-Api_teacher().add_teacher()
 '''学生操作'''
 class Api_students:
 
@@ -188,14 +187,14 @@ class Api_students:
         return response
 
         '''添加学生'''
-    def add_students(self, classid = 20247, gradeid = 1):
-        username = '测试' + str(random.randint(000000,9999999))
+    def add_students(self, username = '测试学生', classid = 20247, gradeid = 1, realname = '测试学生'):
+
         phonenumber = '132' + ''.join(random.sample(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], 8))
         data = {
             "vcode": f"{self.vcode}",
             "action": "add",
             "username": username,
-            "realname": "测试学生",
+            "realname": realname,
             "gradeid": gradeid,
             "classid": classid,
             "phonenumber": phonenumber
@@ -234,8 +233,7 @@ class Api_students:
         self.printResponse(response)
         return response
 
-# print(res.request.body)
-# print(res1.request.body)
+
 # list = [0,1,2,3,4,5,6,7,8,9]
 # print(type(list))
 # a1 = "-"
