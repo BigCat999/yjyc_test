@@ -14,7 +14,7 @@ connection = MySQLdb.connect(
 c = connection.cursor()
 
 # 执行一个获取 users 表中所有记录的 sql 语句
-c.execute("""DELETE from user where user = '周'""")
+c.execute("")
 
 
 # rowcount属性记录了最近一次 execute 方法获取的数据行数

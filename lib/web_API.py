@@ -12,7 +12,7 @@ class Api_class:
     session = requests.Session()
 
     def printResponse(self,response):
-        print('==========='+str(response.content))
+        # print('==========='+str(response.content))
         print('\n\n-------- HTTP response * begin -------')
         print(response.status_code)
 

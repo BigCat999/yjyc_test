@@ -19,3 +19,11 @@ def login(username, password, path):
     wd.find_element(By.CSS_SELECTOR, '#password').send_keys(password)
     wd.find_element(By.CSS_SELECTOR, 'button[id = "submit"]').click()
 
+def exit():
+    wd = GSTORE['wd']
+    wd.find_element(By.XPATH, '//*[@id="topbar"]/div/ul[2]/li/a/span[1]').click()
+    wd.find_element(By.XPATH, '//*[@id="topbar"]/div/ul[2]/li/ul/li[4]/a/i').click()
+
+
+
+

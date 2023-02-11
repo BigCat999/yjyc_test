@@ -1,7 +1,158 @@
 
+
+  ========= 测试开始 : 20230211_160850 =========
+
+
+
+>>> cases\UI_自动化测试用例\空白环境\
+
+[ suite setup ] cases\UI_自动化测试用例\空白环境\
+suite_setup
+
+-- 第 1 步 -- 清空所有学生/老师/班级 
+
+
+
+>>> cases\UI_自动化测试用例\空白环境\存在班级\
+
+[ suite setup ] cases\UI_自动化测试用例\空白环境\存在班级\
+
 -- 第 1 步 -- 添加班级 
 
-old初始班级id:20606
+old初始班级id:20701
 
--- 第 1 步 -- 添加班级 
 
+>>> cases\UI_自动化测试用例\空白环境\存在班级\存在老师\
+
+[ suite setup ] cases\UI_自动化测试用例\空白环境\存在班级\存在老师\
+
+-- 第 1 步 -- 添加老师 
+
+请求结果{'retcode': 0, 'id': 5346}
+请求结果5346
+
+
+>>> cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\
+
+[ suite setup ] cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\
+
+-- 第 1 步 -- 添加学生 
+
+返回结果{'retcode': 0, 'id': 2242}
+
+
+>>> cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\ui_exst_te.py
+
+[ suite setup ] cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\ui_exst_te.py
+
+-- 第 1 步 -- 获取浏览器对象 
+
+
+* 老师发布作业1  -  2023-02-11 16:08:52
+
+[ case setup ] 老师发布作业1
+
+-- 第 1 步 -- 创建试题 
+
+case setup fail | Message: element click intercepted: Element <label class="btn btn-default btn-choice" sid="1">...</label> is not clickable at point (316, 42). Other element would receive the click: <li style="cursor: pointer;">...</li>
+  (Session info: chrome=110.0.5481.78)
+Stacktrace:
+Backtrace:
+	(No symbol) [0x010E6643]
+	(No symbol) [0x0107BE21]
+	(No symbol) [0x00F7DA9D]
+	(No symbol) [0x00FB92B2]
+	(No symbol) [0x00FB6970]
+	(No symbol) [0x00FB3E0B]
+	(No symbol) [0x00FB2548]
+	(No symbol) [0x00FA6B13]
+	(No symbol) [0x00FCFD7C]
+	(No symbol) [0x00FA641F]
+	(No symbol) [0x00FD00D4]
+	(No symbol) [0x00FE6B09]
+	(No symbol) [0x00FCFB76]
+	(No symbol) [0x00FA49C1]
+	(No symbol) [0x00FA5E5D]
+	GetHandleVerifier [0x0135A142+2497106]
+	GetHandleVerifier [0x013885D3+2686691]
+	GetHandleVerifier [0x0138BB9C+2700460]
+	GetHandleVerifier [0x01193B10+635936]
+	(No symbol) [0x01084A1F]
+	(No symbol) [0x0108A418]
+	(No symbol) [0x0108A505]
+	(No symbol) [0x0109508B]
+	BaseThreadInitThunk [0x76A06BD9+25]
+	RtlGetFullPathName_UEx [0x77988FD2+1218]
+	RtlGetFullPathName_UEx [0x77988F9D+1165]
+ 
+Traceback:
+  File "cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\ui_exst_te.py", line 66, in setup
+    wd.find_element(By.XPATH, '//*[@id="btn_group_textbookvols_1"]/label[1]').click()
+  File "D:\Python39\lib\site-packages\selenium\webdriver\remote\webelement.py", line 88, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "D:\Python39\lib\site-packages\selenium\webdriver\remote\webelement.py", line 396, in _execute
+    return self._parent.execute(command, params)
+  File "D:\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 434, in execute
+    self.error_handler.check_response(response)
+  File "D:\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 243, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <label class="btn btn-default btn-choice" sid="1">...</label> is not clickable at point (316, 42). Other element would receive the click: <li style="cursor: pointer;">...</li>
+  (Session info: chrome=110.0.5481.78)
+Stacktrace:
+Backtrace:
+	(No symbol) [0x010E6643]
+	(No symbol) [0x0107BE21]
+	(No symbol) [0x00F7DA9D]
+	(No symbol) [0x00FB92B2]
+	(No symbol) [0x00FB6970]
+	(No symbol) [0x00FB3E0B]
+	(No symbol) [0x00FB2548]
+	(No symbol) [0x00FA6B13]
+	(No symbol) [0x00FCFD7C]
+	(No symbol) [0x00FA641F]
+	(No symbol) [0x00FD00D4]
+	(No symbol) [0x00FE6B09]
+	(No symbol) [0x00FCFB76]
+	(No symbol) [0x00FA49C1]
+	(No symbol) [0x00FA5E5D]
+	GetHandleVerifier [0x0135A142+2497106]
+	GetHandleVerifier [0x013885D3+2686691]
+	GetHandleVerifier [0x0138BB9C+2700460]
+	GetHandleVerifier [0x01193B10+635936]
+	(No symbol) [0x01084A1F]
+	(No symbol) [0x0108A418]
+	(No symbol) [0x0108A505]
+	(No symbol) [0x0109508B]
+	BaseThreadInitThunk [0x76A06BD9+25]
+	RtlGetFullPathName_UEx [0x77988FD2+1218]
+	RtlGetFullPathName_UEx [0x77988F9D+1165]
+
+
+
+[ suite teardown ] cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\ui_exst_te.py
+关闭浏览器
+
+
+  ========= 测试结束 : 20230211_160914 =========
+
+
+  耗时    : 23.612 秒
+
+
+  预备执行用例数量 : 1
+
+  实际执行用例数量 : 1
+
+  通过 : 0
+
+  失败 : 0
+
+  异常 : 0
+
+  套件初始化失败 : 0
+
+  套件清除  失败 : 0
+
+  用例初始化失败 : 1
+
+  用例清除  失败 : 0
