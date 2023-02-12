@@ -41,7 +41,7 @@ class tc005001():
         sleep(2)
         el_list = [i.text for i in el_texts]
         INFO(f'列表{el_list[:3]}')
-        CHECK_POINT('检查页面元素', el_list[:3] == ['白月学院00002', '测试老师', '初中数学'])
+        CHECK_POINT('检查页面元素', el_list[:3] == ['白月学院00002', '测试老师', '初中体育'])
 
 
 class tc005081():
@@ -54,6 +54,12 @@ class tc005081():
         res = Api_students().add_students(username = 'tc005081', classid = cscl_id, realname = 'tc005081' )
         INFO(f'返回结果{res.json()}')
         print(res.json())
+
+    def teardown (self):
+        STEP(1,'删除创建学生')
+        st_res = Api_students().ls_students()
+        for idlist in st_res.json()['retlist']:
+            Api_students().del_students(idlist['id'])
 
     def teststeps(self):
         wd = GSTORE['wd']

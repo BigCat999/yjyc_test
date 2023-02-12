@@ -84,7 +84,7 @@ class tc001002():
         classlist.append(dict_class2)
         STEP(1, '修改老师')
         classlist = json.dumps(classlist)
-        te_res = web_API.Api_teacher().moy_teacher(teacherid = cste_id, classlist = classlist, subjectid = 12)
+        te_res = web_API.Api_teacher().moy_teacher(teacherid = cste_id, classlist = classlist, subjectid = 13)
         INFO(f'返回结果{te_res.json()}')
         CHECK_POINT('检查返回结果', te_res.json()['retcode'] == 0)
 
