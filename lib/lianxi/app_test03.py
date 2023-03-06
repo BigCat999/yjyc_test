@@ -3,6 +3,7 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.common.by import By
 from appium.webdriver.extensions.android.nativekey import AndroidKey
 from time import time, sleep
+
 desired_caps = {
   'platformName': 'Android', # 被测手机是安卓
   'platformVersion': '10', # 手机安卓版本

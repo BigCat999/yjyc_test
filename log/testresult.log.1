@@ -1,580 +1,62 @@
 
 
-  ========= 测试开始 : 20230212_173127 =========
+  ========= 测试开始 : 20230305_181740 =========
 
 
 
->>> cases\API_自动化测试用例\空白环境\
+>>> cases\APP自动化测试用例\空白环境\
 
-[ suite setup ] cases\API_自动化测试用例\空白环境\
+[ suite setup ] cases\APP自动化测试用例\空白环境\
 suite_setup
 
 -- 第 1 步 -- 清空所有学生/老师/班级 
 
 
 
->>> cases\API_自动化测试用例\空白环境\blank_test.py
+>>> cases\APP自动化测试用例\空白环境\app_blank_test.py
 
-* 添加班级1  -  2023-02-12 17:31:28
-
-  [ case execution steps ]
-
--- 第 1 步 -- 添加班级 
-
-接口返回0
-
-** 检查点 **  检查返回值 ---->  通过
-
-接口返回20769
-
-** 检查点 **  检查返回值 ---->  通过
-
-  PASS 
-
-
->>> cases\API_自动化测试用例\空白环境\存在班级\
-
-[ suite setup ] cases\API_自动化测试用例\空白环境\存在班级\
-
--- 第 1 步 -- 添加班级 
-
-old初始班级id:20770
-
-
->>> cases\API_自动化测试用例\空白环境\存在班级\excl_class.py
-
-* 添加班级2  -  2023-02-12 17:31:28
+* vcode登录1  -  2023-03-05 18:17:40
 
   [ case execution steps ]
-
--- 第 1 步 -- 添加班级 
-
-接口返回{'invitecode': '207719165920', 'retcode': 0, 'id': 20771}
-接口返回0
-
-** 检查点 **  检查返回值 ---->  通过
-
-接口返回20771
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-* 添加班级3  -  2023-02-12 17:31:28
-
-  [ case execution steps ]
-
--- 第 1 步 -- 添加相同名称的班级 
-
-接口返回{'reason': 'Traceback (most recent call last):\n  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 542, in addClass\n    school_class = self._addClass(name,schoolid,gradeid,studentlimit)\n  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 531, in _addClass\n    school_class.save()\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save\n    force_update=force_update, update_fields=update_fields)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base\n    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 822, in _save_table\n    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 861, in _do_insert\n    using=using, raw=raw)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method\n    return getattr(self.get_queryset(), name)(*args, **kwargs)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert\n    return query.get_compiler(using=using).execute_sql(return_id)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 974, in execute_sql\n    cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute\n    return self.cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__\n    six.reraise(dj_exc_type, dj_exc_value, traceback)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute\n    return self.cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute\n    return self.cursor.execute(query, args)\n  File "/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute\n    self.errorhandler(self, exc, value)\n  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler\n    raise errorclass, errorvalue\nIntegrityError: (1062, "Duplicate entry \'\\xe5\\x88\\x9d\\xe5\\xa7\\x8b\\xe7\\x8f\\xad\\xe7\\xba\\xa7-407-1\' for key \'name\'")\n', 'retcode': 1}
-接口返回Traceback (most recent call last):
-  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 542, in addClass
-    school_class = self._addClass(name,schoolid,gradeid,studentlimit)
-  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 531, in _addClass
-    school_class.save()
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save
-    force_update=force_update, update_fields=update_fields)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base
-    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 822, in _save_table
-    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 861, in _do_insert
-    using=using, raw=raw)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/manager.py", line 127, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 920, in _insert
-    return query.get_compiler(using=using).execute_sql(return_id)
-  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 974, in execute_sql
-    cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
-    return self.cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__
-    six.reraise(dj_exc_type, dj_exc_value, traceback)
-  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute
-    return self.cursor.execute(sql, params)
-  File "/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute
-    return self.cursor.execute(query, args)
-  File "/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute
-    self.errorhandler(self, exc, value)
-  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler
-    raise errorclass, errorvalue
-IntegrityError: (1062, "Duplicate entry '\xe5\x88\x9d\xe5\xa7\x8b\xe7\x8f\xad\xe7\xba\xa7-407-1' for key 'name'")
-
-
-** 检查点 **  检查返回结果 ---->  !! 不通过!!
-
-  FAIL    
+  ABORT   Message: An element could not be located on the page using the given search parameters.
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:75:11) 
 Traceback:
-  File "cases\API_自动化测试用例\空白环境\存在班级\excl_class.py", line 35, in teststeps
-    CHECK_POINT('检查返回结果', reason == 'duplicated class name')
-  File "D:\Python39\lib\site-packages\hytest\common.py", line 58, in CHECK_POINT
-    raise AssertionError()
-AssertionError
+  File "cases\APP自动化测试用例\空白环境\app_blank_test.py", line 18, in teststeps
+    tishi = wd.find_element(By.ID, 'message')
+  File "D:\Python39\lib\site-packages\appium\webdriver\webdriver.py", line 383, in find_element
+    return self.execute(RemoteCommand.FIND_ELEMENT, {'using': by, 'value': value})['value']
+  File "D:\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 434, in execute
+    self.error_handler.check_response(response)
+  File "D:\Python39\lib\site-packages\appium\webdriver\errorhandler.py", line 30, in check_response
+    raise wde
+  File "D:\Python39\lib\site-packages\appium\webdriver\errorhandler.py", line 26, in check_response
+    super().check_response(response)
+  File "D:\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 243, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: An element could not be located on the page using the given search parameters.
+Stacktrace:
+NoSuchElementError: An element could not be located on the page using the given search parameters.
+    at AndroidUiautomator2Driver.findElOrEls (C:\Program Files\Appium\resources\app\node_modules\appium\node_modules\appium-android-driver\lib\commands\find.js:75:11)
 
 
-* 修改班级1  -  2023-02-12 17:31:28
 
-  [ case execution steps ]
+  ========= 测试结束 : 20230305_181806 =========
 
--- 第 1 步 -- 修改班级名字 
 
+  耗时    : 26.655 秒
 
--- 第 2 步 -- 查询班级名称 
 
+  预备执行用例数量 : 1
 
-** 检查点 **  检查返回结果 ---->  通过
+  实际执行用例数量 : 1
 
-  PASS 
+  通过 : 0
 
-* 修改班级2  -  2023-02-12 17:31:29
+  失败 : 0
 
-  [ case execution steps ]
-
--- 第 1 步 -- 创建班级 
-
-添加班级id:20773
-班级列表:{'gradeid': 1, 'retlist': [{'name': '测试001', 'grade__name': '七年级', 'invitecode': '207690315573', 'studentlimit': 100, 'studentnumber': 0, 'id': 20769, 'teacherlist': []}, {'name': '修改名称1676194288.9572592', 'grade__name': '七年级', 'invitecode': '207701242796', 'studentlimit': 100, 'studentnumber': 0, 'id': 20770, 'teacherlist': []}, {'name': '测试002', 'grade__name': '七年级', 'invitecode': '207719165920', 'studentlimit': 100, 'studentnumber': 0, 'id': 20771, 'teacherlist': []}, {'name': "<class 'excl_class.tc000052'>", 'grade__name': '七年级', 'invitecode': '207735414032', 'studentlimit': 100, 'studentnumber': 0, 'id': 20773, 'teacherlist': []}], 'retcode': 0}
-班级列表:[{'name': '测试001', 'grade__name': '七年级', 'invitecode': '207690315573', 'studentlimit': 100, 'studentnumber': 0, 'id': 20769, 'teacherlist': []}, {'name': '修改名称1676194288.9572592', 'grade__name': '七年级', 'invitecode': '207701242796', 'studentlimit': 100, 'studentnumber': 0, 'id': 20770, 'teacherlist': []}, {'name': '测试002', 'grade__name': '七年级', 'invitecode': '207719165920', 'studentlimit': 100, 'studentnumber': 0, 'id': 20771, 'teacherlist': []}, {'name': "<class 'excl_class.tc000052'>", 'grade__name': '七年级', 'invitecode': '207735414032', 'studentlimit': 100, 'studentnumber': 0, 'id': 20773, 'teacherlist': []}]
-班级列表:修改名称1676194288.9572592
-修改返回结果:{'reason': '未知错误:Traceback (most recent call last):\n  File "/home/yjyx/yijiao_src/yijiao_main/services/datamodel/schoolclass/models.py", line 612, in modifyClass\n    school_class.save()\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 710, in save\n    force_update=force_update, update_fields=update_fields)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 738, in save_base\n    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 803, in _save_table\n    forced_update)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/base.py", line 853, in _do_update\n    return filtered._update(values) > 0\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/query.py", line 580, in _update\n    return query.get_compiler(self.db).execute_sql(CURSOR)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 1062, in execute_sql\n    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)\n  File "/usr/local/lib/python2.7/site-packages/django/db/models/sql/compiler.py", line 840, in execute_sql\n    cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute\n    return self.cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/utils.py", line 97, in __exit__\n    six.reraise(dj_exc_type, dj_exc_value, traceback)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/utils.py", line 64, in execute\n    return self.cursor.execute(sql, params)\n  File "/usr/local/lib/python2.7/site-packages/django/db/backends/mysql/base.py", line 124, in execute\n    return self.cursor.execute(query, args)\n  File "/usr/local/lib/python2.7/site-packages/MySQLdb/cursors.py", line 205, in execute\n    self.errorhandler(self, exc, value)\n  File "/usr/local/lib/python2.7/site-packages/MySQLdb/connections.py", line 36, in defaulterrorhandler\n    raise errorclass, errorvalue\nIntegrityError: (1062, "Duplicate entry \'\\xe4\\xbf\\xae\\xe6\\x94\\xb9\\xe5\\x90\\x8d\\xe7\\xa7\\xb01676194288.9572592-407-1\' for key \'name\'")\n', 'retcode': 10000}
-
-** 检查点 **  检查返回结果 ---->  !! 不通过!!
-
-  FAIL    
-Traceback:
-  File "cases\API_自动化测试用例\空白环境\存在班级\excl_class.py", line 73, in teststeps
-    CHECK_POINT('检查返回结果', reason == 'duplicated class name')
-  File "D:\Python39\lib\site-packages\hytest\common.py", line 58, in CHECK_POINT
-    raise AssertionError()
-AssertionError
-
-
-* 修改班级3  -  2023-02-12 17:31:29
-
-  [ case execution steps ]
-
--- 第 1 步 -- 修改不存在的班级 
-
-修改返回结果:{'reason': 'id 为`99999999`的班级不存在', 'retcode': 404}
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-* 删除班级1  -  2023-02-12 17:31:29
-
-  [ case execution steps ]
-
--- 第 1 步 -- 删除不存在的班级 
-
-修改返回结果:{'reason': 'id 为`9999999`的班级不存在', 'retcode': 404}
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-* 删除班级2  -  2023-02-12 17:31:29
-
-[ case setup ] 删除班级2
-
--- 第 1 步 -- 创建班级 
-
-
-  [ case execution steps ]
-
--- 第 2 步 -- 删除班级 
-
-修改返回结果:{'retcode': 0}
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-
->>> cases\API_自动化测试用例\空白环境\存在班级\excl_teacher.py
-
-* 添加老师1  -  2023-02-12 17:31:29
-
-  [ case execution steps ]
-
--- 第 1 步 -- 添加老师 
-
-返回结果{'retcode': 0, 'id': 5406}
-
-** 检查点 **  存在添加的老师 ---->  通过
-
-  PASS 
-
-
->>> cases\API_自动化测试用例\空白环境\存在班级\存在老师\
-
-[ suite setup ] cases\API_自动化测试用例\空白环境\存在班级\存在老师\
-
--- 第 1 步 -- 添加老师 
-
-请求结果{'retcode': 0, 'id': 5407}
-请求结果5407
-
-
->>> cases\API_自动化测试用例\空白环境\存在班级\存在老师\exte_student.py
-
-* 添加学生1  -  2023-02-12 17:31:29
-
-  [ case execution steps ]
-
--- 第 1 步 -- 添加学生 
-
-返回结果{'retcode': 0, 'id': 2298}
-
-** 检查点 **  添加成功 ---->  通过
-
-返回结果{'retlist': [{'classid': 20770, 'realname': '测试学生', 'username': '测试学生', 'phonenumber': '13252916473', 'id': 2298}], 'retcode': 0}
-
-** 检查点 **  是否添加成功 ---->  通过
-
-  PASS 
-
-
->>> cases\API_自动化测试用例\空白环境\存在班级\存在老师\exte_teacher.py
-
-* 添加老师2  -  2023-02-12 17:31:29
-
-  [ case execution steps ]
-
--- 第 1 步 -- 添加老师 
-
-接口返回{'retcode': 0, 'id': 5408}
-返回结果{'retlist': [{'username': '登录1676194287', 'teachclasslist': [20770], 'realname': '测试老师', 'id': 5406, 'phonenumber': '13246760048', 'email': 'ceshi@16553.com', 'idcardnumber': '111111155'}, {'username': '初始老师', 'teachclasslist': [20770], 'realname': '测试老师', 'id': 5407, 'phonenumber': '13221820616', 'email': 'ceshi@16553.com', 'idcardnumber': '111111155'}, {'username': 'tc001009', 'teachclasslist': [20770], 'realname': '测试老师', 'id': 5408, 'phonenumber': '13273252269', 'email': 'ceshi@16553.com', 'idcardnumber': '111111155'}], 'retcode': 0}
-5406
-5407
-5408
-
-** 检查点 **  是否添加成功 ---->  通过
-
-  PASS 
-
-* 添加老师3  -  2023-02-12 17:31:29
-
-  [ case execution steps ]
-
--- 第 1 步 -- 添加老师 
-
-返回结果{'reason': '登录名 初始老师 已经存在', 'retcode': 1}
-
-** 检查点 **  登录名 初始老师 已经存在 ---->  通过
-
-  PASS 
-
-* 修改老师1  -  2023-02-12 17:31:29
-
-  [ case execution steps ]
-
--- 第 1 步 -- 修改老师 
-
-返回结果{'reason': 'id 为`999999`的老师不存在', 'retcode': 1}
-
-** 检查点 **   id 为`999999`的老师不存在 ---->  通过
-
-  PASS 
-
-* 修改老师2  -  2023-02-12 17:31:29
-
-[ case setup ] 修改老师2
-
--- 第 1 步 -- 创建班级class2 
-
-接口返回{'invitecode': '207759773448', 'retcode': 0, 'id': 20775}
-
-  [ case execution steps ]
-
--- 第 1 步 -- 修改老师 
-
-返回结果{'retcode': 0}
-
-** 检查点 **  检查返回结果 ---->  通过
-
-  PASS 
-
-* 删除老师1  -  2023-02-12 17:31:29
-
-  [ case execution steps ]
-
--- 第 1 步 -- 删除老师 
-
-返回结果{'reason': 'id 为`9999999`的老师不存在', 'retcode': 404}
-
-** 检查点 **  id 为`9999999`的老师不存在 ---->  通过
-
-  PASS 
-
-* 删除老师2  -  2023-02-12 17:31:29
-
-[ case setup ] 删除老师2
-
--- 第 1 步 -- 添加老师 
-
-返回结果{'retcode': 0, 'id': 5409}
-
-  [ case execution steps ]
-
--- 第 2 步 -- 删除老师 
-
-返回结果{'retcode': 0}
-
-** 检查点 **  删除老师是否成功 ---->  通过
-
-
-** 检查点 **  删除成功 ---->  通过
-
-
-** 检查点 **  删除成功 ---->  通过
-
-
-** 检查点 **  删除成功 ---->  通过
-
-  PASS 
-
-
->>> cases\API_自动化测试用例\空白环境\存在班级\存在老师\存在学生\
-
-[ suite setup ] cases\API_自动化测试用例\空白环境\存在班级\存在老师\存在学生\
-
--- 第 1 步 -- 添加学生 
-
-返回结果{'retcode': 0, 'id': 2299}
-
-
->>> cases\API_自动化测试用例\空白环境\存在班级\存在老师\存在学生\exst_student.py
-
-* 添加学生2  -  2023-02-12 17:31:29
-
-  [ case execution steps ]
-
--- 第 1 步 -- 添加学生 
-
-返回结果{'retcode': 0, 'id': 2300}
-返回结果{'retlist': [{'classid': 20770, 'realname': '测试学生', 'username': '测试学生', 'phonenumber': '13252916473', 'id': 2298}, {'classid': 20770, 'realname': '初始学生', 'username': '初始学生', 'phonenumber': '13217630285', 'id': 2299}, {'classid': 20770, 'realname': '测试学生', 'username': 'tc002001', 'phonenumber': '13259816072', 'id': 2300}], 'retcode': 0}
-
-** 检查点 **  是否添加成功 ---->  通过
-
-  PASS 
-
-* 删除学生1  -  2023-02-12 17:31:30
-
-[ case setup ] 删除学生1
-
--- 第 1 步 -- 添加学生 
-
-
-  [ case execution steps ]
-
--- 第 2 步 -- 删除学生 
-
-返回结果{'retlist': [{'classid': 20770, 'realname': '测试学生', 'username': '测试学生', 'phonenumber': '13252916473', 'id': 2298}, {'classid': 20770, 'realname': '初始学生', 'username': '初始学生', 'phonenumber': '13217630285', 'id': 2299}, {'classid': 20770, 'realname': '测试学生', 'username': 'tc002001', 'phonenumber': '13259816072', 'id': 2300}], 'retcode': 0}
-
-** 检查点 **  是否删除成功 ---->  通过
-
-  PASS 
-
-
->>> cases\UI_自动化测试用例\空白环境\
-
-[ suite setup ] cases\UI_自动化测试用例\空白环境\
-suite_setup
-
--- 第 1 步 -- 清空所有学生/老师/班级 
-
-
-
->>> cases\UI_自动化测试用例\空白环境\存在班级\
-
-[ suite setup ] cases\UI_自动化测试用例\空白环境\存在班级\
-
--- 第 1 步 -- 添加班级 
-
-old初始班级id:20776
-
-
->>> cases\UI_自动化测试用例\空白环境\存在班级\ui_excl_te.py
-
-[ suite setup ] cases\UI_自动化测试用例\空白环境\存在班级\ui_excl_te.py
-
--- 第 1 步 -- 获取浏览器对象 
-
-
-* 老师登录1  -  2023-02-12 17:31:32
-
-[ case setup ] 老师登录1
-
--- 第 1 步 -- 创建老师 
-
-
--- 第 1 步 -- 添加老师 
-
-返回结果{'retcode': 0, 'id': 5410}
-
-  [ case execution steps ]
-
--- 第 2 步 -- 登录账号 
-
-列表['白月学院00002', '测试老师', '初中体育']
-
-** 检查点 **  检查页面元素 ---->  !! 不通过!!
-
-  FAIL    
-Traceback:
-  File "cases\UI_自动化测试用例\空白环境\存在班级\ui_excl_te.py", line 44, in teststeps
-    CHECK_POINT('检查页面元素', el_list[:3] == ['白月学院00002', '测试老师', '初中数学'])
-  File "D:\Python39\lib\site-packages\hytest\common.py", line 58, in CHECK_POINT
-    raise AssertionError()
-AssertionError
-
-
-* 学生登录1  -  2023-02-12 17:31:36
-
-[ case setup ] 学生登录1
-
--- 第 1 步 -- 创建学生 
-
-返回结果{'retcode': 0, 'id': 2302}
-
-  [ case execution steps ]
-
--- 第 2 步 -- 登录学生账号 
-
-列表['tc005081', '白月学院00002']
-
-** 检查点 **  检查页面元素 ---->  通过
-
-  PASS 
-
-[ case teardown ] 学生登录1
-
--- 第 1 步 -- 删除创建学生 
-
-
-[ suite teardown ] cases\UI_自动化测试用例\空白环境\存在班级\ui_excl_te.py
-关闭浏览器
-
-
->>> cases\UI_自动化测试用例\空白环境\存在班级\存在老师\
-
-[ suite setup ] cases\UI_自动化测试用例\空白环境\存在班级\存在老师\
-
--- 第 1 步 -- 添加老师 
-
-请求结果{'retcode': 0, 'id': 5411}
-请求结果5411
-
-
->>> cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\
-
-[ suite setup ] cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\
-
--- 第 1 步 -- 添加学生 
-
-返回结果{'retcode': 0, 'id': 2303}
-
-
->>> cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\ui_exst_te.py
-
-[ suite setup ] cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\ui_exst_te.py
-
--- 第 1 步 -- 获取浏览器对象 
-
-
-* 老师登录2  -  2023-02-12 17:31:44
-
-  [ case execution steps ]
-
--- 第 2 步 -- 登录账号 
-
-列表['初始学生']
-名字初始学生
-
-** 检查点 **  检查学生姓名 ---->  通过
-
-  PASS 
-
-* 老师发布作业1  -  2023-02-12 17:31:58
-
-  [ case execution steps ]
-
--- 第 1 步 -- 登录老师账号发布作业 
-
-窗口句柄CDwindow-14E1BE3229142F337D7FB4A9A86C144F
-窗口句柄['CDwindow-14E1BE3229142F337D7FB4A9A86C144F', 'CDwindow-C1BC7DC522B47F231272DF0A97E087C4']
-当前窗口句柄CDwindow-C1BC7DC522B47F231272DF0A97E087C4
-
--- 第 2 步 -- 登录学生账号完成作业 
-
-['examSubmitted &&!question.correct', 'examSubmitted &&!question.correct', 'examSubmitted &&question.correct']
-窗口句柄CDwindow-C1BC7DC522B47F231272DF0A97E087C4
-窗口句柄['CDwindow-14E1BE3229142F337D7FB4A9A86C144F', 'CDwindow-C1BC7DC522B47F231272DF0A97E087C4', 'CDwindow-D73D2EDFAA0A1D5A99847A0D8886F5B2']
-当前窗口句柄CDwindow-D73D2EDFAA0A1D5A99847A0D8886F5B2
-
-** 检查点 **  对比作业完成情况 ---->  通过
-
-  PASS 
-
-* 老师发布作业2  -  2023-02-12 17:32:39
-
-  [ case execution steps ]
-
--- 第 1 步 -- 登录老师账号发布作业 
-
-请输入作业名称
-
-** 检查点 **  检查提示语 ---->  通过
-
-  PASS 
-
-* 老师发布作业3  -  2023-02-12 17:32:50
-
-  [ case execution steps ]
-
--- 第 1 步 -- 登录老师账号发布作业 
-
-a
-
-** 检查点 **  检查创建作业名称 ---->  通过
-
-  PASS 
-
-* 老师发布作业4  -  2023-02-12 17:33:06
-
-  [ case execution steps ]
-
--- 第 1 步 -- 登录老师账号发布作业 
-
-111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-测试*（）asdzz111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-页面文本测试*（）asdzz111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-实际文本测试*（）asdzz111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-
-** 检查点 **  检查创建作业名称 ---->  通过
-
-  PASS 
-
-[ suite teardown ] cases\UI_自动化测试用例\空白环境\存在班级\存在老师\存在学生\ui_exst_te.py
-关闭浏览器
-
-
-  ========= 测试结束 : 20230212_173324 =========
-
-
-  耗时    : 116.394 秒
-
-
-  预备执行用例数量 : 25
-
-  实际执行用例数量 : 25
-
-  通过 : 22
-
-  失败 : 3
-
-  异常 : 0
+  异常 : 1
 
   套件初始化失败 : 0
 
