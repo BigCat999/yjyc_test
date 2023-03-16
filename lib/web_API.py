@@ -75,7 +75,6 @@ class Api_class:
         self.printResponse(response)
         return response
 
-
 class Api_teacher:
 
     url = configs.url
@@ -232,7 +231,7 @@ class Api_students:
                                        data=data)
         self.printResponse(response)
         return response
-
+Api_class().ls_class()
 # list = [0,1,2,3,4,5,6,7,8,9]
 # print(type(list))
 # a1 = "-"

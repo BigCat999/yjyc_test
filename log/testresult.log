@@ -1,6 +1,10 @@
+suite_setup
+
+-- 第 1 步 -- 清空所有学生/老师/班级 
 
 
-  ========= 测试开始 : 20230305_182033 =========
+
+  ========= 测试开始 : 20230315_225544 =========
 
 
 
@@ -15,35 +19,245 @@ suite_setup
 
 >>> cases\APP自动化测试用例\空白环境\app_blank_test.py
 
-* vcode登录1  -  2023-03-05 18:20:33
+* vcode登录1  -  2023-03-15 22:55:44
 
   [ case execution steps ]
-列表登录失败 : vcode format error:1
+登录失败 : vcode format error:1
+
+** 检查点 **  检查提示 ---->  通过
+
+  PASS 
+
+* vcode登录2  -  2023-03-15 22:56:14
+
+  [ case execution steps ]
+该学校还没有班级，点击刷新
+
+** 检查点 **  检查提示 ---->  通过
+
+该学校还没有老师，点击刷新
+
+** 检查点 **  检查提示 ---->  通过
+
+  PASS 
+
+* 添加班级1  -  2023-03-15 22:56:40
+
+  [ case execution steps ]
+添加成功
+班级ID为：20286
+班级邀请码为：202866491566
+
+** 检查点 **  检查提示 ---->  通过
+
+返回值：  七年级 : app自动化创建班级  
+
+** 检查点 **  检查提示 ---->  通过
+
+返回值：app自动化创建班级
 
 ** 检查点 **  检查提示 ---->  通过
 
   PASS 
 
 
-  ========= 测试结束 : 20230305_182056 =========
+>>> cases\APP自动化测试用例\空白环境\存在班级\
+
+[ suite setup ] cases\APP自动化测试用例\空白环境\存在班级\
+
+-- 第 1 步 -- 添加班级 
+
+old初始班级id:20287
 
 
-  耗时    : 22.304 秒
+>>> cases\APP自动化测试用例\空白环境\存在班级\app_excl.py
+
+* 添加老师1  -  2023-03-15 22:57:12
+
+  [ case execution steps ]
+添加成功
+老师ID为：5224
+
+** 检查点 **  检查提示 ---->  通过
+
+返回值：  app自动化创建老师  
+
+** 检查点 **  检查提示 ---->  通过
+
+返回值：app自动化创建老师
+
+** 检查点 **  检查提示 ---->  通过
+
+  PASS 
 
 
-  预备执行用例数量 : 1
+>>> cases\APP自动化测试用例\空白环境\存在班级\存在老师\
 
-  实际执行用例数量 : 1
+[ suite setup ] cases\APP自动化测试用例\空白环境\存在班级\存在老师\
 
-  通过 : 1
+-- 第 1 步 -- 添加老师 
+
+请求结果{'retcode': 0, 'id': 5225}
+请求结果5225
+
+
+>>> cases\APP自动化测试用例\空白环境\存在班级\存在老师\app_exte_login.py
+
+* vcode登录3  -  2023-03-15 22:57:51
+
+  [ case execution steps ]
+  ABORT   ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')) 
+Traceback:
+  File "D:\Python39\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "D:\Python39\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "D:\Python39\lib\http\client.py", line 1377, in getresponse
+    response.begin()
+  File "D:\Python39\lib\http\client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "D:\Python39\lib\http\client.py", line 289, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python39\lib\site-packages\hytest\utils\runner.py", line 162, in _exec_cases
+    try:case.execRet='pass';case.teststeps();signal.case_result(case)
+  File "cases\APP自动化测试用例\空白环境\存在班级\存在老师\app_exte_login.py", line 15, in teststeps
+    login()
+  File "C:\Users\86152\Desktop\亿教亿学系统自动化测试\lib\app_public.py", line 29, in login
+    wd = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
+  File "D:\Python39\lib\site-packages\appium\webdriver\webdriver.py", line 230, in __init__
+    super().__init__(
+  File "D:\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 276, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "D:\Python39\lib\site-packages\appium\webdriver\webdriver.py", line 320, in start_session
+    response = self.execute(RemoteCommand.NEW_SESSION, w3c_caps)
+  File "D:\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 432, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "D:\Python39\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 344, in execute
+    return self._request(command_info[0], url, body=data)
+  File "D:\Python39\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 366, in _request
+    response = self._conn.request(method, url, body=body, headers=headers)
+  File "D:\Python39\lib\site-packages\urllib3\request.py", line 78, in request
+    return self.request_encode_body(
+  File "D:\Python39\lib\site-packages\urllib3\request.py", line 170, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+  File "D:\Python39\lib\site-packages\urllib3\poolmanager.py", line 376, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "D:\Python39\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\Python39\lib\site-packages\urllib3\util\retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\Python39\lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Python39\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\Python39\lib\site-packages\urllib3\connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "D:\Python39\lib\site-packages\urllib3\connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "D:\Python39\lib\http\client.py", line 1377, in getresponse
+    response.begin()
+  File "D:\Python39\lib\http\client.py", line 320, in begin
+    version, status, reason = self._read_status()
+  File "D:\Python39\lib\http\client.py", line 289, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+
+[ suite teardown ] cases\APP自动化测试用例\空白环境\存在班级\
+suite teardown fail | ('Connection aborted.', ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None)) 
+Traceback:
+  File "D:\Python39\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python39\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "D:\Python39\lib\http\client.py", line 1285, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python39\lib\http\client.py", line 1331, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "D:\Python39\lib\http\client.py", line 1001, in send
+    self.sock.sendall(data)
+ConnectionAbortedError: [WinError 10053] 你的主机中的软件中止了一个已建立的连接。
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python39\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "D:\Python39\lib\site-packages\urllib3\connectionpool.py", line 785, in urlopen
+    retries = retries.increment(
+  File "D:\Python39\lib\site-packages\urllib3\util\retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "D:\Python39\lib\site-packages\urllib3\packages\six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Python39\lib\site-packages\urllib3\connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "D:\Python39\lib\site-packages\urllib3\connectionpool.py", line 398, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python39\lib\site-packages\urllib3\connection.py", line 239, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "D:\Python39\lib\http\client.py", line 1285, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python39\lib\http\client.py", line 1331, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python39\lib\http\client.py", line 1280, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python39\lib\http\client.py", line 1040, in _send_output
+    self.send(msg)
+  File "D:\Python39\lib\http\client.py", line 1001, in send
+    self.sock.sendall(data)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python39\lib\site-packages\hytest\utils\runner.py", line 116, in execTest
+    try:suite_teardown()
+  File "cases\APP自动化测试用例\空白环境\存在班级\__st__.py", line 15, in suite_teardown
+    te_res = web_API.Api_teacher().ls_tescher()
+  File "C:\Users\86152\Desktop\亿教亿学系统自动化测试\lib\web_API.py", line 101, in ls_tescher
+    response = self.session.get(
+  File "D:\Python39\lib\site-packages\requests\sessions.py", line 600, in get
+    return self.request("GET", url, **kwargs)
+  File "D:\Python39\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Python39\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\Python39\lib\site-packages\requests\adapters.py", line 547, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionAbortedError(10053, '你的主机中的软件中止了一个已建立的连接。', None, 10053, None))
+
+
+
+  ========= 测试结束 : 20230316_082122 =========
+
+
+  耗时    : 33938.566 秒
+
+
+  预备执行用例数量 : 5
+
+  实际执行用例数量 : 5
+
+  通过 : 4
 
   失败 : 0
 
-  异常 : 0
+  异常 : 1
 
   套件初始化失败 : 0
 
-  套件清除  失败 : 0
+  套件清除  失败 : 1
 
   用例初始化失败 : 0
 

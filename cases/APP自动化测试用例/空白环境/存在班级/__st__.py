@@ -9,4 +9,10 @@ def suite_setup():
     cscl_id = res.json()['id']
     INFO(f'old初始班级id:{cscl_id}')
     GSTORE['cscl_id'] = cscl_id
-    print(cscl_id)
+
+
+def suite_teardown():
+    te_res = web_API.Api_teacher().ls_tescher()
+    for idlist in te_res.json()['retlist']:
+        print(idlist['id'])
+        response =web_API.Api_teacher().del_teacher(idlist['id'])
